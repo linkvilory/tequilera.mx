@@ -49,12 +49,16 @@ header{
   padding: 40px 0 0 0;
 
   figure{
-    float: left;
+    float: none;
+    img{
+      display: block;
+      margin: auto;
+    }
   }
 
   nav{
-    float: right;
-    margin: 40px 0 0 0;
+    float: none;
+    margin: 40px auto 0;
 
     ul{
       padding: 0;
@@ -63,8 +67,9 @@ header{
       display: block;
       li{
         list-style: none;
-        display: inline-block;
-        padding: 0 20px;
+        display: block;
+        padding: 8px 0px;
+        text-align: center;
         a{
           color: $white;
           text-decoration: none;
@@ -121,6 +126,8 @@ main{
           z-index: 1;
           display: table;
           margin: 5% 0 0 10%;
+          width: 150px;
+
           .tequila{
             position: relative;
           }
@@ -128,12 +135,12 @@ main{
             position: absolute;
             bottom: 0px;
             z-index: 3;
-            left: 150px;
+            left: 100px;
           }
           .shoot{
             position: absolute;
-            bottom: 0px;
-            left: 200px;
+            bottom: -10px;
+            left: 160px;
             z-index: 2;
           }
         }
@@ -141,18 +148,17 @@ main{
           position: absolute;
           bottom: 10%;
           right: 10%;
+          display: none;
         }
         .texto{
-          position: absolute;
-          top: 10%;
-          right: 20%;
+          position: relative;
+          max-width: 200px;
+          margin: auto;
         }
         .btn-slide{
-          position: absolute;
-          bottom: 10%;
-          left: 40%;
-          margin: 20px auto 0;
-          display: inline-block;
+          position: relative;
+          margin: 20px auto;
+          display: table;
           background: $gray_light;
           color: $white;
           text-align: center;
@@ -182,20 +188,22 @@ main{
           position: relative;
           z-index: 1;
           display: table;
-          margin: 5% 0 0 30%;
+          margin: 5% 0 0 20%;
+          width: 150px;
           .tequila{
             position: relative;
           }
           .fruit{
             position: absolute;
-            bottom: 100px;
+            bottom: 78px;
             z-index: 2;
-            left: 170px;
+            left: 133px;
+            width: 60px;
           }
           .shoot{
             position: absolute;
-            bottom: -30px;
-            left: 50px;
+            bottom: -26px;
+            left: 39px;
             z-index: 2;
           }
         }
@@ -203,18 +211,17 @@ main{
           position: absolute;
           top: 10%;
           left: 10%;
+          display: none;
         }
         .texto{
-          position: absolute;
-          top: 30%;
-          right: 10%;
+          position: relative;
+          max-width: 200px;
         }
         .btn-slide{
-          position: absolute;
-          bottom: 10%;
-          right: 20%;
-          margin: 20px auto 0;
-          display: inline-block;
+
+          position: relative;
+          margin: 20px auto;
+          display: table;
           background: $gray_light;
           color: $white;
           text-align: center;
@@ -245,38 +252,39 @@ main{
           z-index: 1;
           display: table;
           margin: 5% 0 0 30%;
+          width: 140px;
           .tequila{
             position: relative;
+            left: 80px;
           }
           .fruit{
             position: absolute;
-            bottom: 60px;
+            bottom: 30px;
             z-index: 2;
-            left: -165px;
+            left: 5px;
+            width: 120px;
           }
           .shoot{
             position: absolute;
             bottom: 20px;
-            left: -360px;
-            z-index: 2;
+            left: -100px;
+            z-index: -1;
           }
         }
         .logo{
           position: absolute;
           top: 5%;
           right: 10%;
+          display: none;
         }
         .texto{
-          position: absolute;
-          top: 50%;
-          right: 10%;
+          position: relative;
+          max-width: 250px;
         }
         .btn-slide{
-          position: absolute;
-          bottom: 10%;
-          right: 20%;
-          margin: 20px auto 0;
-          display: inline-block;
+          position: relative;
+          margin: 20px auto;
+          display: table;
           background: $gray_light;
           color: $white;
           text-align: center;
@@ -297,6 +305,7 @@ main{
     &#leyenda{
       position: relative;
       padding: 60px 0;
+      overflow: hidden;
       .barril{
         min-width: 400px;
         min-height: 400px;
@@ -308,12 +317,13 @@ main{
         &.left{
           top: 0;
           left: 0;
-          background: url('../images/nuestra-leyenda-almacen.png') no-repeat scroll center center /cover;
+          background: url('../images/nuestra-leyenda-almacen.png') no-repeat scroll center center;
         }
         &.right{
           top: 0;
           right: 0;
           background: url('../images/nuestra-leyenda-barril.png') no-repeat scroll center center /cover;
+          display: none;
         }
       }
       p{
@@ -322,9 +332,10 @@ main{
         text-align: center;
         margin-bottom: 20px;
         &.header{
-          font-size: calc(5rem + 1vh);
+          font-size: calc(4rem + 1vh);
           text-transform: uppercase;
           font-family: $header-thin;
+          line-height: 1;
           span{
             font-family: $header-condensed;
           }
@@ -348,7 +359,7 @@ main{
         text-align: left;
         margin-bottom: 20px;
         &.header{
-          font-size: calc(5rem + 1vh);
+          font-size: calc(4rem + 1vh);
           text-transform: uppercase;
           font-family: $header-thin;
           line-height: 1;
@@ -359,6 +370,8 @@ main{
       }
       .product{
         text-align: center;
+        width: 150px;
+        margin: auto;
         p{
           text-align: center;
           margin: 0;
@@ -400,6 +413,16 @@ main{
         height: 100%;
         z-index: 2;
       }
+      .fullscreen-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1;
+      }
+
       video {
         position: absolute;
         top: 50%;
@@ -418,11 +441,14 @@ main{
       }
       .absolute-txt{
         position: absolute;
-        top: calc(100vh / 2 - 150px);
-        right: 10%;
-        width: 500px;
-        height: 150px;
+        top: calc(100vh / 2 - 200px);
+        right: 0;
+        width: 100%;
+        height: auto;
         z-index: 3;
+        text-align: center;
+        padding: 0 15px;
+
         .header-thin{
           font-family: $header-thin;
           color: $white;
@@ -453,12 +479,15 @@ footer{
   background: url('../images/contactanos-fondo.png') no-repeat scroll center center / cover;
   width: 100%;
   min-height: 40vh;
-  padding: 60px 0;
+  padding: 60px 0 0;
   position: relative;
   .tequilero{
-    min-height: 300px;
-    min-width: 150px;
+    width: 100px;
     position: relative;
+    display: block;
+    margin: auto;
+
+
     .limon{
       position: relative;
       bottom: -30px;
@@ -470,19 +499,18 @@ footer{
     }
   }
   .header{
-    font-size: calc(0.70em + 1vh);
     color: $white;
     text-align: left;
     margin-bottom: 20px;
-    font-size: calc(5rem + 1vh);
+    font-size: calc(4rem + 1vh);
     text-transform: uppercase;
     font-family: $header-thin;
+    line-height: 1;
     span{
       font-family: $header-condensed;
     }
   }
   .cities{
-    float: left;
     padding: 0;
     margin: 0;
     li{
@@ -507,8 +535,8 @@ footer{
     border: 3px solid $white;
     position: relative;
     padding: 15px;
-    float: right;
-    top: 60px;
+    display: table;
+    margin: auto;
     span.follow{
       position: absolute;
       top: -11px;
@@ -530,7 +558,7 @@ footer{
         a{
           color: transparent;
           text-decoration: none;
-          font-size: 2em;
+          font-size: 1em;
           -webkit-transition: .25s all ease;
           transition: .25s all ease;
           &:hover,
@@ -835,3 +863,5 @@ p{
   background: #222;
   background: rgba(0,0,0, .8);
 }
+
+@import '_media';

@@ -1,4 +1,28 @@
 // Global variables
+
+function createCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {
+    createCookie(name,"",-1);
+}
+
 var validation = {
   isEmailAddress:function(str) {
       var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -29,9 +53,30 @@ var validation = {
 // Init
 $(document).ready(function(){
 
-  $('#isOlder').modal({
-    backdrop: 'static'
-  });
+  var x = readCookie('isOlderCookie')
+  if (!x) {
+    $('#isOlder').modal({
+      backdrop: 'static'
+    });
+  }
+
+  new WOW().init();
+
+  /*
+   * Menu top navigation
+   */
+  /* Navigation menu link */
+  $("nav ul li a").on("click", function(e){
+    e.preventDefault();
+    var target = this.hash;
+    var scrollAnimationTime = 1200,
+        scrollAnimation = 'swing';
+    $('html, body').stop().animate({
+        'scrollTop': $(target).offset().top
+    }, scrollAnimationTime, scrollAnimation, function () {
+        //window.location.hash = target;
+    });
+  }); // End navigation menu click event handler
 
   $(".rslices").responsiveSlides({
     auto: true,             // Boolean: Animate automatically, true or false
@@ -73,22 +118,32 @@ $(document).ready(function(){
 
   $('#isYearOn input[type="text"]').on('input', function() {
     var value = $('#isYearOn input[type="text"]').val();
-    console.log(value);
     if(!(validation.isNumber(value))){
       $('#isYearOn input[type="text"]').val("");
     }else{
       if(!(validation.isExact(value))){
         return;
       }else{
-        console.log(validation.isYearsOld(value));
-        $("#isYearOn").addClass("hidden");
-        $(".year").addClass("hidden");
-        $(".welcome").removeClass("hidden");
-        setTimeout(function(){
-          $('#isOlder').modal("hide");
-        }, 1500);
 
       }
+    }
+
+  });
+
+  $('#isYearOn').submit(function(e){
+
+    e.preventDefault();
+    var value = $('#isYearOn input[type="text"]').val();
+    if(!(validation.isExact(value))){
+      return;
+    }else{
+      createCookie('isOlderCookie','1',1);
+      $("#isYearOn").addClass("hidden");
+      $(".year").addClass("hidden");
+      $(".welcome").removeClass("hidden");
+      setTimeout(function(){
+        $('#isOlder').modal("hide");
+      }, 1500);
     }
 
   });

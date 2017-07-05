@@ -66,10 +66,13 @@ body {
 header {
   padding: 40px 0 0 0; }
   header figure {
-    float: left; }
+    float: none; }
+    header figure img {
+      display: block;
+      margin: auto; }
   header nav {
-    float: right;
-    margin: 40px 0 0 0; }
+    float: none;
+    margin: 40px auto 0; }
     header nav ul {
       padding: 0;
       margin: 0;
@@ -77,8 +80,9 @@ header {
       display: block; }
       header nav ul li {
         list-style: none;
-        display: inline-block;
-        padding: 0 20px; }
+        display: block;
+        padding: 8px 0px;
+        text-align: center; }
         header nav ul li a {
           color: #fff;
           text-decoration: none;
@@ -118,33 +122,33 @@ main {
         position: relative;
         z-index: 1;
         display: table;
-        margin: 5% 0 0 10%; }
+        margin: 5% 0 0 10%;
+        width: 150px; }
         main section#top .slideA .product .tequila {
           position: relative; }
         main section#top .slideA .product .fruit {
           position: absolute;
           bottom: 0px;
           z-index: 3;
-          left: 150px; }
+          left: 100px; }
         main section#top .slideA .product .shoot {
           position: absolute;
-          bottom: 0px;
-          left: 200px;
+          bottom: -10px;
+          left: 160px;
           z-index: 2; }
       main section#top .slideA .logo {
         position: absolute;
         bottom: 10%;
-        right: 10%; }
+        right: 10%;
+        display: none; }
       main section#top .slideA .texto {
-        position: absolute;
-        top: 10%;
-        right: 20%; }
+        position: relative;
+        max-width: 200px;
+        margin: auto; }
       main section#top .slideA .btn-slide {
-        position: absolute;
-        bottom: 10%;
-        left: 40%;
-        margin: 20px auto 0;
-        display: inline-block;
+        position: relative;
+        margin: 20px auto;
+        display: table;
         background: #A0A0A0;
         color: #fff;
         text-align: center;
@@ -168,33 +172,33 @@ main {
         position: relative;
         z-index: 1;
         display: table;
-        margin: 5% 0 0 30%; }
+        margin: 5% 0 0 20%;
+        width: 150px; }
         main section#top .slideB .product .tequila {
           position: relative; }
         main section#top .slideB .product .fruit {
           position: absolute;
-          bottom: 100px;
+          bottom: 78px;
           z-index: 2;
-          left: 170px; }
+          left: 133px;
+          width: 60px; }
         main section#top .slideB .product .shoot {
           position: absolute;
-          bottom: -30px;
-          left: 50px;
+          bottom: -26px;
+          left: 39px;
           z-index: 2; }
       main section#top .slideB .logo {
         position: absolute;
         top: 10%;
-        left: 10%; }
+        left: 10%;
+        display: none; }
       main section#top .slideB .texto {
-        position: absolute;
-        top: 30%;
-        right: 10%; }
+        position: relative;
+        max-width: 200px; }
       main section#top .slideB .btn-slide {
-        position: absolute;
-        bottom: 10%;
-        right: 20%;
-        margin: 20px auto 0;
-        display: inline-block;
+        position: relative;
+        margin: 20px auto;
+        display: table;
         background: #A0A0A0;
         color: #fff;
         text-align: center;
@@ -218,33 +222,34 @@ main {
         position: relative;
         z-index: 1;
         display: table;
-        margin: 5% 0 0 30%; }
+        margin: 5% 0 0 30%;
+        width: 140px; }
         main section#top .slideC .product .tequila {
-          position: relative; }
+          position: relative;
+          left: 80px; }
         main section#top .slideC .product .fruit {
           position: absolute;
-          bottom: 60px;
+          bottom: 30px;
           z-index: 2;
-          left: -165px; }
+          left: 5px;
+          width: 120px; }
         main section#top .slideC .product .shoot {
           position: absolute;
           bottom: 20px;
-          left: -360px;
-          z-index: 2; }
+          left: -100px;
+          z-index: -1; }
       main section#top .slideC .logo {
         position: absolute;
         top: 5%;
-        right: 10%; }
+        right: 10%;
+        display: none; }
       main section#top .slideC .texto {
-        position: absolute;
-        top: 50%;
-        right: 10%; }
+        position: relative;
+        max-width: 250px; }
       main section#top .slideC .btn-slide {
-        position: absolute;
-        bottom: 10%;
-        right: 20%;
-        margin: 20px auto 0;
-        display: inline-block;
+        position: relative;
+        margin: 20px auto;
+        display: table;
         background: #A0A0A0;
         color: #fff;
         text-align: center;
@@ -258,7 +263,8 @@ main {
           background: #ee4149; }
     main section#leyenda {
       position: relative;
-      padding: 60px 0; }
+      padding: 60px 0;
+      overflow: hidden; }
       main section#leyenda .barril {
         min-width: 400px;
         min-height: 400px;
@@ -269,20 +275,22 @@ main {
         main section#leyenda .barril.left {
           top: 0;
           left: 0;
-          background: url("../images/nuestra-leyenda-almacen.png") no-repeat scroll center center/cover; }
+          background: url("../images/nuestra-leyenda-almacen.png") no-repeat scroll center center; }
         main section#leyenda .barril.right {
           top: 0;
           right: 0;
-          background: url("../images/nuestra-leyenda-barril.png") no-repeat scroll center center/cover; }
+          background: url("../images/nuestra-leyenda-barril.png") no-repeat scroll center center/cover;
+          display: none; }
       main section#leyenda p {
         font-size: calc(0.70em + 1vh);
         color: #fff;
         text-align: center;
         margin-bottom: 20px; }
         main section#leyenda p.header {
-          font-size: calc(5rem + 1vh);
+          font-size: calc(4rem + 1vh);
           text-transform: uppercase;
-          font-family: "Roboto-Thin"; }
+          font-family: "Roboto-Thin";
+          line-height: 1; }
           main section#leyenda p.header span {
             font-family: "Roboto-Condensed"; }
         main section#leyenda p.upper {
@@ -298,14 +306,16 @@ main {
       text-align: left;
       margin-bottom: 20px; }
       main section#tienda p.header {
-        font-size: calc(5rem + 1vh);
+        font-size: calc(4rem + 1vh);
         text-transform: uppercase;
         font-family: "Roboto-Thin";
         line-height: 1; }
         main section#tienda p.header span {
           font-family: "Roboto-Condensed"; }
     main section#tienda .product {
-      text-align: center; }
+      text-align: center;
+      width: 150px;
+      margin: auto; }
       main section#tienda .product p {
         text-align: center;
         margin: 0; }
@@ -337,6 +347,14 @@ main {
         width: 100%;
         height: 100%;
         z-index: 2; }
+      main section#video .fullscreen-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1; }
       main section#video video {
         position: absolute;
         top: 50%;
@@ -354,11 +372,13 @@ main {
         transition: 1s opacity; }
       main section#video .absolute-txt {
         position: absolute;
-        top: calc(100vh / 2 - 150px);
-        right: 10%;
-        width: 500px;
-        height: 150px;
-        z-index: 3; }
+        top: calc(100vh / 2 - 200px);
+        right: 0;
+        width: 100%;
+        height: auto;
+        z-index: 3;
+        text-align: center;
+        padding: 0 15px; }
         main section#video .absolute-txt .header-thin {
           font-family: "Roboto-Thin";
           color: #fff;
@@ -381,12 +401,13 @@ footer {
   background: url("../images/contactanos-fondo.png") no-repeat scroll center center/cover;
   width: 100%;
   min-height: 40vh;
-  padding: 60px 0;
+  padding: 60px 0 0;
   position: relative; }
   footer .tequilero {
-    min-height: 300px;
-    min-width: 150px;
-    position: relative; }
+    width: 100px;
+    position: relative;
+    display: block;
+    margin: auto; }
     footer .tequilero .limon {
       position: relative;
       bottom: -30px;
@@ -395,17 +416,16 @@ footer {
       position: relative;
       z-index: 2; }
   footer .header {
-    font-size: calc(0.70em + 1vh);
     color: #fff;
     text-align: left;
     margin-bottom: 20px;
-    font-size: calc(5rem + 1vh);
+    font-size: calc(4rem + 1vh);
     text-transform: uppercase;
-    font-family: "Roboto-Thin"; }
+    font-family: "Roboto-Thin";
+    line-height: 1; }
     footer .header span {
       font-family: "Roboto-Condensed"; }
   footer .cities {
-    float: left;
     padding: 0;
     margin: 0; }
     footer .cities li {
@@ -425,8 +445,8 @@ footer {
     border: 3px solid #fff;
     position: relative;
     padding: 15px;
-    float: right;
-    top: 60px; }
+    display: table;
+    margin: auto; }
     footer .social span.follow {
       position: absolute;
       top: -11px;
@@ -447,7 +467,7 @@ footer {
         footer .social ul li a {
           color: transparent;
           text-decoration: none;
-          font-size: 2em;
+          font-size: 1em;
           -webkit-transition: .25s all ease;
           transition: .25s all ease; }
           footer .social ul li a:hover, footer .social ul li a:focus, footer .social ul li a:active {
@@ -695,5 +715,428 @@ p {
 .rslides2_nav a {
   background: #222;
   background: rgba(0, 0, 0, 0.8); }
+
+@media print {
+  body > *:not(main) {
+    display: none; } }
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 992px) {
+  main section#video .fullscreen-bg {
+    background: url("../images/video-reserva-del-corazon.png") no-repeat scroll left center/cover; }
+
+  main section#video .fullscreen-bg video {
+    display: none; } }
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  header {
+    padding: 40px 0 0 0; }
+    header figure {
+      float: left; }
+    header nav {
+      float: right;
+      margin: 40px 0 0 0; }
+      header nav ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: block; }
+        header nav ul li {
+          list-style: none;
+          display: inline-block;
+          padding: 0 20px; }
+          header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px; }
+            header nav ul li a:hover, header nav ul li a:focus, header nav ul li a:active {
+              color: #fff;
+              text-decoration: none; }
+
+  main {
+    background: #030303; }
+    main section {
+      padding: 60px 0;
+      min-height: calc(50vh - 150px); }
+      main section.parallax {
+        padding: 0;
+        margin: 0;
+        min-height: 70vh;
+        width: 100%;
+        position: relative; }
+        main section.parallax.reserva {
+          background: url("../images/parallax-reserva-del-corazon.jpg") no-repeat fixed center center/cover; }
+        main section.parallax.corazon {
+          background: url("../images/parallax-tequila-rosado.jpg") no-repeat fixed center center/cover; }
+      main section#top {
+        padding: 0px;
+        margin: 0px; }
+        main section#top .slideA .slideA-bg {
+          background: url("../images/slide/fresa/background.jpg") no-repeat scroll center center/cover;
+          width: calc(100% + 30px);
+          height: calc(100vh + 30px);
+          top: 0;
+          left: 0;
+          position: absolute;
+          z-index: 0; }
+        main section#top .slideA .product {
+          position: relative;
+          z-index: 1;
+          display: table;
+          margin: 5% 0 0 10%;
+          width: auto; }
+          main section#top .slideA .product .tequila {
+            position: relative; }
+          main section#top .slideA .product .fruit {
+            position: absolute;
+            bottom: 0px;
+            z-index: 3;
+            left: 150px;
+            width: auto; }
+          main section#top .slideA .product .shoot {
+            position: absolute;
+            bottom: 0px;
+            left: 200px;
+            z-index: 2;
+            width: auto; }
+        main section#top .slideA .logo {
+          position: absolute;
+          bottom: 10%;
+          right: 10%;
+          display: block; }
+        main section#top .slideA .texto {
+          position: absolute;
+          top: 10%;
+          right: 20%;
+          max-width: inherit; }
+        main section#top .slideA .btn-slide {
+          position: absolute;
+          bottom: 10%;
+          left: 40%;
+          margin: 20px auto 0;
+          display: inline-block;
+          background: #A0A0A0;
+          color: #fff;
+          text-align: center;
+          padding: 5px 15px;
+          border: 0;
+          text-decoration: none;
+          z-index: 4;
+          -webkit-transition: .25s all ease;
+          transition: .25s all ease; }
+          main section#top .slideA .btn-slide:hover {
+            background: #ee4149; }
+        main section#top .slideB .slideB-bg {
+          background: url("../images/slide/blanco/background.jpg") no-repeat scroll center center/cover;
+          width: calc(100% + 30px);
+          height: calc(100vh + 30px);
+          top: 0;
+          left: 0;
+          position: absolute;
+          z-index: 0; }
+        main section#top .slideB .product {
+          position: relative;
+          z-index: 1;
+          display: table;
+          margin: 5% 0 0 30%;
+          width: auto; }
+          main section#top .slideB .product .tequila {
+            position: relative; }
+          main section#top .slideB .product .fruit {
+            position: absolute;
+            bottom: 100px;
+            z-index: 2;
+            left: 170px;
+            width: auto; }
+          main section#top .slideB .product .shoot {
+            position: absolute;
+            bottom: -30px;
+            left: 50px;
+            z-index: 2;
+            width: auto; }
+        main section#top .slideB .logo {
+          position: absolute;
+          top: 10%;
+          left: 10%;
+          display: block; }
+        main section#top .slideB .texto {
+          position: absolute;
+          top: 30%;
+          right: 10%;
+          max-width: inherit; }
+        main section#top .slideB .btn-slide {
+          position: absolute;
+          bottom: 10%;
+          right: 20%;
+          margin: 20px auto 0;
+          display: inline-block;
+          background: #A0A0A0;
+          color: #fff;
+          text-align: center;
+          padding: 5px 15px;
+          border: 0;
+          text-decoration: none;
+          z-index: 4;
+          -webkit-transition: .25s all ease;
+          transition: .25s all ease; }
+          main section#top .slideB .btn-slide:hover {
+            background: #ee4149; }
+        main section#top .slideC .slideC-bg {
+          background: url("../images/slide/premium/background.jpg") no-repeat scroll center center/cover;
+          width: calc(100% + 30px);
+          height: calc(100vh + 30px);
+          top: 0;
+          left: 0;
+          position: absolute;
+          z-index: 0; }
+        main section#top .slideC .product {
+          position: relative;
+          z-index: 1;
+          display: table;
+          margin: 5% 0 0 30%;
+          width: auto; }
+          main section#top .slideC .product .tequila {
+            position: relative;
+            left: 0; }
+          main section#top .slideC .product .fruit {
+            position: absolute;
+            bottom: 60px;
+            z-index: 2;
+            left: -165px;
+            width: auto; }
+          main section#top .slideC .product .shoot {
+            position: absolute;
+            bottom: 20px;
+            left: -360px;
+            z-index: 2;
+            width: auto; }
+        main section#top .slideC .logo {
+          display: block;
+          position: absolute;
+          top: 5%;
+          right: 10%; }
+        main section#top .slideC .texto {
+          position: absolute;
+          top: 50%;
+          right: 10%;
+          max-width: inherit; }
+        main section#top .slideC .btn-slide {
+          position: absolute;
+          bottom: 10%;
+          right: 20%;
+          margin: 20px auto 0;
+          display: inline-block;
+          background: #A0A0A0;
+          color: #fff;
+          text-align: center;
+          padding: 5px 15px;
+          border: 0;
+          text-decoration: none;
+          z-index: 4;
+          -webkit-transition: .25s all ease;
+          transition: .25s all ease; }
+          main section#top .slideC .btn-slide:hover {
+            background: #ee4149; }
+      main section#leyenda {
+        position: relative;
+        padding: 60px 0; }
+        main section#leyenda .barril {
+          min-width: 400px;
+          min-height: 400px;
+          width: auto;
+          height: 100%;
+          position: absolute;
+          z-index: 0; }
+          main section#leyenda .barril.left {
+            top: 0;
+            left: 0;
+            background: url("../images/nuestra-leyenda-almacen.png") no-repeat scroll center center/cover; }
+          main section#leyenda .barril.right {
+            top: 0;
+            right: 0;
+            background: url("../images/nuestra-leyenda-barril.png") no-repeat scroll center center/cover; }
+        main section#leyenda p {
+          font-size: calc(0.70em + 1vh);
+          color: #fff;
+          text-align: center;
+          margin-bottom: 20px; }
+          main section#leyenda p.header {
+            font-size: calc(5rem + 1vh);
+            text-transform: uppercase;
+            font-family: "Roboto-Thin"; }
+            main section#leyenda p.header span {
+              font-family: "Roboto-Condensed"; }
+          main section#leyenda p.upper {
+            text-transform: uppercase; }
+      main section#tienda .tequila {
+        width: 100%;
+        height: 100%;
+        background: url("../images/lo-mejor-para-llevar.png") no-repeat scroll center center/cover;
+        position: absolute; }
+      main section#tienda p {
+        font-size: calc(0.70em + 1vh);
+        color: #fff;
+        text-align: left;
+        margin-bottom: 20px; }
+        main section#tienda p.header {
+          font-size: calc(5rem + 1vh);
+          text-transform: uppercase;
+          font-family: "Roboto-Thin";
+          line-height: 1; }
+          main section#tienda p.header span {
+            font-family: "Roboto-Condensed"; }
+      main section#tienda .product {
+        text-align: center; }
+        main section#tienda .product p {
+          text-align: center;
+          margin: 0; }
+          main section#tienda .product p .price {
+            color: #ee4149; }
+        main section#tienda .product .btn-price {
+          margin: 20px auto 0;
+          display: inline-block;
+          background: #A0A0A0;
+          color: #fff;
+          text-align: center;
+          padding: 5px 15px;
+          border: 0;
+          text-decoration: none;
+          -webkit-transition: .25s all ease;
+          transition: .25s all ease; }
+          main section#tienda .product .btn-price:hover {
+            background: #ee4149; }
+      main section#video {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        height: 80vh; }
+        main section#video .opacity {
+          position: absolute;
+          background: rgba(0, 0, 0, 0.6);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2; }
+        main section#video video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 80vh;
+          width: auto;
+          height: auto;
+          z-index: 1;
+          -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+          background: url("../images/video-reserva-del-corazon.png") no-repeat;
+          background-size: cover;
+          -webkit-transition: 1s opacity;
+          transition: 1s opacity; }
+        main section#video .absolute-txt {
+          position: absolute;
+          top: calc(100vh / 2 - 150px);
+          right: 10%;
+          width: 500px;
+          height: 150px;
+          z-index: 3;
+          text-align: left; }
+          main section#video .absolute-txt .header-thin {
+            font-family: "Roboto-Thin";
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            line-height: 1; }
+            main section#video .absolute-txt .header-thin.small {
+              font-size: calc(1.5em + 1vh); }
+            main section#video .absolute-txt .header-thin.medium {
+              font-size: calc(2.5em + 1vh); }
+          main section#video .absolute-txt .header-condensed {
+            line-height: 1;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            font-family: "Roboto-Condensed";
+            font-size: calc(5rem + 1vh); }
+
+  footer {
+    background: url("../images/contactanos-fondo.png") no-repeat scroll center center/cover;
+    width: 100%;
+    min-height: 40vh;
+    padding: 60px 0 0;
+    position: relative; }
+    footer .tequilero {
+      width: 100px;
+      position: relative;
+      display: block;
+      margin: auto; }
+      footer .tequilero .limon {
+        position: relative;
+        bottom: -30px;
+        z-index: 1; }
+      footer .tequilero .tequila {
+        position: relative;
+        z-index: 2; }
+    footer .header {
+      color: #fff;
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: calc(4rem + 1vh);
+      text-transform: uppercase;
+      font-family: "Roboto-Thin";
+      line-height: 1; }
+      footer .header span {
+        font-family: "Roboto-Condensed"; }
+    footer .cities {
+      padding: 0;
+      margin: 0;
+      float: left; }
+      footer .cities li {
+        list-style: none;
+        margin: 0px 0px 20px 0px; }
+        footer .cities li p {
+          color: #fff;
+          margin: 0;
+          font-size: calc(2rem + 1vh); }
+          footer .cities li p.city {
+            font-family: "Roboto-Condensed";
+            text-transform: uppercase; }
+          footer .cities li p.whats {
+            font-family: "Roboto-Thin";
+            text-transform: uppercase; }
+    footer .social {
+      border: 3px solid #fff;
+      position: relative;
+      padding: 15px;
+      display: block;
+      margin: 45px auto 0px;
+      float: right; }
+      footer .social span.follow {
+        position: absolute;
+        top: -11px;
+        left: 20px;
+        z-index: 4;
+        background: #fff;
+        color: #000;
+        padding: 0px 15px;
+        font-family: "Roboto-Condensed"; }
+      footer .social ul {
+        padding: 0;
+        margin: 0;
+        list-style: none; }
+        footer .social ul li {
+          list-style: none;
+          display: inline-block;
+          margin: 0px 10px; }
+          footer .social ul li a {
+            color: transparent;
+            text-decoration: none;
+            font-size: 2em;
+            -webkit-transition: .25s all ease;
+            transition: .25s all ease; }
+            footer .social ul li a:hover, footer .social ul li a:focus, footer .social ul li a:active {
+              text-decoration: none;
+              color: #ee4149; } }
+/* Large devices (large desktops, 1200px and up) */
 
 /*# sourceMappingURL=main.css.map */
