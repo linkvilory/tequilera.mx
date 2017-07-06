@@ -88,7 +88,7 @@
         margin: 0px;
         .slideA{
           .slideA-bg{
-            background: url('../images/slide/fresa/background.jpg') no-repeat scroll center center / cover;
+            background: url('../images/slide/fresa/background.jpg') no-repeat scroll center top;
             width: calc(100% + 30px);
             height: calc(100vh + 30px);
             top: 0;
@@ -155,7 +155,7 @@
         }
         .slideB{
           .slideB-bg{
-            background: url('../images/slide/blanco/background.jpg') no-repeat scroll center center / cover;
+            background: url('../images/slide/blanco/background.jpg') no-repeat scroll center top;
             width: calc(100% + 30px);
             height: calc(100vh + 30px);
             top: 0;
@@ -176,7 +176,7 @@
               position: absolute;
               bottom: 100px;
               z-index: 2;
-              left: 170px;
+              left: 160px;
               width: auto;
             }
             .shoot{
@@ -222,7 +222,7 @@
         }
         .slideC{
           .slideC-bg{
-            background: url('../images/slide/premium/background.jpg') no-repeat scroll center center / cover;
+            background: url("../images/slide/premium/background.jpg") no-repeat scroll center top;
             width: calc(100% + 30px);
             height: calc(100vh + 30px);
             top: 0;
@@ -309,6 +309,7 @@
           &.right{
             top: 0;
             right: 0;
+            display: block;
             background: url('../images/nuestra-leyenda-barril.png') no-repeat scroll center center /cover;
           }
         }
@@ -417,7 +418,7 @@
           position: absolute;
           top: calc(100vh / 2 - 150px);
           right: 10%;
-          width: 500px;
+          width: 60%;
           height: 150px;
           z-index: 3;
           text-align: left;
@@ -428,10 +429,10 @@
             text-transform: uppercase;
             line-height: 1;
             &.small{
-              font-size: calc(1.5em + 1vh);
+              font-size: calc(2em + 1vh);
             }
             &.medium{
-              font-size: calc(2.5em + 1vh);
+              font-size: calc(4em + 1vh);
             }
           }
           .header-condensed{
@@ -440,7 +441,62 @@
             margin: 0;
             text-transform: uppercase;
             font-family: $header_condensed;
-            font-size: calc(5rem + 1vh);
+            font-size: calc(6rem + 1vh);
+          }
+        }
+      }
+
+      &#product{
+        padding: 60px 0;
+        height: calc(100vh - 150px);
+        .product-img{
+          img{
+            display: block;
+            margin: auto;
+          }
+        }
+        p{
+          font-size: calc(0.70em + 1vh);
+          color: $white;
+          text-align: left;
+          margin-bottom: 20px;
+          &.header{
+            font-size: calc(4rem + 1vh);
+            text-transform: uppercase;
+            font-family: $header-thin;
+            line-height: 1;
+            border-left: 2px solid $gray_light;
+            padding-left: 10px;
+          }
+          &.subheader{
+            font-size: calc(2rem + 1vh);
+            text-transform: uppercase;
+            font-family: $header-thin;
+            line-height: 1;
+          }
+          span{
+            font-family: $header-condensed;
+          }
+        }
+        .info-box{
+          height: calc(100vh - 400px);
+          overflow-y: scroll;
+        }
+        .btn-slide{
+          position: relative;
+          margin: auto;
+          display: table;
+          background: $gray_light;
+          color: $white;
+          text-align: center;
+          padding: 5px 15px;
+          border: 0;
+          text-decoration: none;
+          z-index: 4;
+          -webkit-transition: .25s all ease;
+          transition: .25s all ease;
+          &:hover{
+            background: $red;
           }
         }
       }
@@ -458,8 +514,6 @@
       position: relative;
       display: block;
       margin: auto;
-
-
       .limon{
         position: relative;
         bottom: -30px;
@@ -474,7 +528,7 @@
       color: $white;
       text-align: left;
       margin-bottom: 20px;
-      font-size: calc(4rem + 1vh);
+      font-size: calc(6rem + 1vh);
       text-transform: uppercase;
       font-family: $header-thin;
       line-height: 1;
@@ -505,26 +559,51 @@
       }
     }
     .social{
-      border: 3px solid $white;
+      border-left: 2px solid $white;
+      border-right: 2px solid $white;
+      border-bottom: 2px solid $white;
       position: relative;
       padding: 15px;
       display: block;
       margin: 45px auto 0px;
       float: right;
+      width: 500px;
       span.follow{
         position: absolute;
         top: -11px;
         left: 20px;
         z-index: 4;
-        background: $white;
-        color: $black;
+        background: transparent;
+        color: $white;
         padding: 0px 15px;
         font-family: $header_condensed;
+        &:before{
+          display: table;
+          content: "";
+          width: 20px;
+          position: absolute;
+          top: 11px;
+          height: 2px;
+          background: #fff;
+          left: -20px;
+        }
+        &:after{
+          display: table;
+          content: "";
+          width: 385px;
+          position: absolute;
+          top: 11px;
+          height: 2px;
+          background: #fff;
+          right: -388px;
+        }
       }
       ul{
         padding: 0;
         margin: 0;
         list-style: none;
+        display: table;
+        margin: auto;
         li{
           list-style: none;
           display: inline-block;

@@ -54,7 +54,7 @@ var validation = {
 $(document).ready(function(){
 
   var x = readCookie('isOlderCookie')
-  if (!x) {
+  if (x) {
     $('#isOlder').modal({
       backdrop: 'static'
     });
@@ -67,6 +67,9 @@ $(document).ready(function(){
    */
   /* Navigation menu link */
   $("nav ul li a").on("click", function(e){
+    if($(this).hasClass("outter")){
+      return;
+    }
     e.preventDefault();
     var target = this.hash;
     var scrollAnimationTime = 1200,
@@ -77,6 +80,7 @@ $(document).ready(function(){
         //window.location.hash = target;
     });
   }); // End navigation menu click event handler
+
 
   $(".rslices").responsiveSlides({
     auto: true,             // Boolean: Animate automatically, true or false
@@ -97,23 +101,30 @@ $(document).ready(function(){
     after: function(){}     // Function: After callback
   });
 
-  $(".rslides").responsiveSlides({
-    auto: true,             // Boolean: Animate automatically, true or false
-    speed: 500,            // Integer: Speed of the transition, in milliseconds
-    timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
-    pager: false,           // Boolean: Show pager, true or false
-    nav: true,             // Boolean: Show navigation, true or false
-    random: false,          // Boolean: Randomize the order of the slides, true or false
-    pause: true,           // Boolean: Pause on hover, true or false
-    pauseControls: false,    // Boolean: Pause when hovering controls, true or false
-    prevText: "<i class='fa fa-angle-left' aria-hidden='true'></i>",   // String: Text for the "previous" button
-    nextText: "<i class='fa fa-angle-right' aria-hidden='true'></i>",       // String: Text for the "next" button
-    maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
-    navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
-    manualControls: "",     // Selector: Declare custom pager navigation
-    namespace: "rslides2",   // String: Change the default namespace used
-    before: function(){},   // Function: Before callback
-    after: function(){}     // Function: After callback
+  $('.threeSlides').slick({
+    centerMode: true,
+    centerPadding: '150px',
+    slidesToShow: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '150px',
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '50px',
+          slidesToShow: 1
+        }
+      }
+    ]
   });
 
   $('#isYearOn input[type="text"]').on('input', function() {
